@@ -32,20 +32,10 @@
 %% Initialization
 clear ; close all; clc
 
-%% ==================== Part 1: Basic Function ====================
-% Complete warmUpExercise.m
-fprintf('Running warmUpExercise ... \n');
-fprintf('5x5 Identity Matrix: \n');
-warmUpExercise()
-
-
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
 
 %% ======================= Part 2: Plotting =======================
 fprintf('Plotting Data ...\n')
-data = load('ex1data1.txt');
+data = load('Corona_data.txt');
 X = data(:, 1); y = data(:, 2);
 m = length(y); % number of training examples
 
@@ -59,11 +49,11 @@ pause;
 %% =================== Part 3: Cost and Gradient descent ===================
 
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
-theta = zeros(2, 1); % initialize fitting parameters
+theta = zeros(3, 1); % initialize fitting parameters
 
 % Some gradient descent settings
 iterations = 1500;
-alpha = 0.01;
+alpha = 0.01; %can be editted
 
 fprintf('\nTesting the cost function ...\n')
 % compute and display initial cost
@@ -110,8 +100,8 @@ pause;
 fprintf('Visualizing J(theta_0, theta_1) ...\n')
 
 % Grid over which we will calculate J
-theta0_vals = linspace(-10, 10, 100);
-theta1_vals = linspace(-1, 4, 100);
+theta0_vals = linspace(-10, 10, 20);
+theta1_vals = linspace(-1, 4, 20);
 
 % initialize J_vals to a matrix of 0's
 J_vals = zeros(length(theta0_vals), length(theta1_vals));
