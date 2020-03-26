@@ -117,6 +117,7 @@ fprintf('Sigmoid gradient evaluated at [-1 -0.5 0 0.5 1]:\n  ');
 fprintf('%f ', g);
 fprintf('\n\n');
 
+
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
@@ -187,7 +188,7 @@ fprintf('\nTraining Neural Network... \n')
 options = optimset('MaxIter', 50);
 
 %  You should also try different values of lambda
-lambda = 1;
+lambda = 0.9;
 
 % Create "short hand" for the cost function to be minimized
 costFunction = @(p) nnCostFunction(p, ...

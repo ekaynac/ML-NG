@@ -20,7 +20,7 @@ grad = zeros(size(theta));
 %
 
 
-J = sum((sigmoid(X*transpose(theta))-y).^2)
+
 
 
 
