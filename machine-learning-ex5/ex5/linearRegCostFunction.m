@@ -21,7 +21,13 @@ grad = zeros(size(theta));
 
 
 
+temp_Theta = theta; %Not to change original theta variable
+temp_Theta(1) = 0; % We multiply biases by zeros to get rid of
+hypo = X * theta; % Our hypothesis function
 
+J = (1 / (2*m) ) * sum((hypo-y).^2) + (lambda / (2 * m))*sum(temp_Theta.^2);
+error = hypo - y;
+grad = (1 / m) * (X' * error) + (lambda/m)*temp_Theta;
 
 
 

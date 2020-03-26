@@ -53,11 +53,17 @@ error_val   = zeros(m, 1);
 
 % ---------------------- Sample Solution ----------------------
 
-
-
-
-
-
+for i = 1:m % as our training examples increasing from 1 to m how our train
+            % and, validation set errors change
+	
+    Xtrain =  X(1:i, :);  
+	Ytrain = y(1:i);
+    
+	theta = trainLinearReg(Xtrain,Ytrain,lambda);
+    
+	error_train(i) = linearRegCostFunction(Xtrain,Ytrain,theta,0);
+	error_val(i) = linearRegCostFunction(Xval,yval,theta,0);
+end
 
 % -------------------------------------------------------------
 
