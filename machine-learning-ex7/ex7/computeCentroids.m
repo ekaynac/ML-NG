@@ -25,14 +25,9 @@ centroids = zeros(K, n);
 %
 % Note: You can use a for-loop over the centroids to compute this.
 %
-
-
-
-
-
-
-
-
+for k=1:K % for every centroid
+   centroids(k, :) = mean(X(idx==k, :)); % take mean of the positions of every element labeled with K
+end
 % =============================================================
 
 

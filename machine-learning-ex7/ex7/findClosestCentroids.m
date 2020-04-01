@@ -20,13 +20,14 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
-
+for i = 1:size(X(:,1)) % Check every value
+    distance_array = zeros(1,K);
+    for j = 1:K % Check distance to every centroid
+        distance_array(1,j) = sqrt(sum(power((X(i,:)-centroids(j,:)),2))); % Distances to centeroids added to distance array for every x value
+    end
+    [~, d_idx] = min(distance_array); %Taking minimum of distance arrays columns
+    idx(i,1) = d_idx; %Adding closest centeroid's number to index matrix
+end
 % =============================================================
 
 end
